@@ -14,7 +14,7 @@ if (nano) {
 		drag: function _drag(e) {
 			e = (window.event)? window.event : e;
 			nano.dragdrop.select(this, 'drag', this.get('nano_drag_limit'), e);
-			if (typeof this.node.onselect === 'function') this.node.onselect.call(this.node,e);
+			if (typeof this.node.onselect === 'function') this.node.onselect.call(this.node, e);
 		},
 		resize: function _resize(e) {
 			e = (window.event)? window.event : e;
@@ -54,7 +54,7 @@ if (nano) {
 					nano_drag_w: evt.clientX-node.x(),
 					nano_drag_h: evt.clientY-node.y(),
 					nano_drag_limit: limit || 'none',
-					nano_drag_callback: ((type === 'resize')? function(e) { nano.dragdrop.resize(this,e); } : function(e) { nano.dragdrop.drag(this,e); })
+					nano_drag_callback: ((type === 'resize')? function(e) { nano.dragdrop.resize(this, e); } : function(e) { nano.dragdrop.drag(this, e); })
 				});
 				nano.dragdrop.node = node;
 				window.onmousemove = function(e) { nano.dragdrop.node.node.nano_drag_callback((window.event)? window.event : e); };
